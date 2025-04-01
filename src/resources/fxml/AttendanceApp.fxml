@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane fx:controller="edu.attendance.controller.AttendanceController" 
+            xmlns:fx="http://javafx.com/fxml" 
+            styleClass="main-container" 
+            prefHeight="700" prefWidth="900">
+    
+    <top>
+        <HBox alignment="CENTER" spacing="10" styleClass="header">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="Classroom Attendance System" styleClass="title-label"/>
+        </HBox>
+    </top>
+    
+    <left>
+        <VBox spacing="10" styleClass="student-list-container">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="Students" styleClass="section-header"/>
+            <ListView fx:id="studentListView" VBox.vgrow="ALWAYS"/>
+            <HBox spacing="10">
+                <Button text="Random Selection" fx:id="randomSelectButton" onAction="#handleRandomSelect" styleClass="action-button"/>
+                <Button text="Save Records" fx:id="saveButton" onAction="#handleSave" styleClass="action-button"/>
+            </HBox>
+        </VBox>
+    </left>
+    
+    <center>
+        <VBox alignment="CENTER" spacing="20" styleClass="student-detail-container">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            
+            <ImageView fx:id="studentImageView" fitHeight="200" fitWidth="200" preserveRatio="true"/>
+            
+            <Label fx:id="studentNameLabel" styleClass="student-name"/>
+            
+            <ScrollPane fitToWidth="true" maxHeight="100" styleClass="quote-container">
+                <Label fx:id="quoteLabel" wrapText="true" styleClass="quote-text"/>
+            </ScrollPane>
+            
+            <HBox alignment="CENTER" spacing="15">
+                <Label text="Statistics:" styleClass="stats-header"/>
+                <Label fx:id="statsLabel" styleClass="stats-text"/>
+            </HBox>
+            
+            <VBox alignment="CENTER" spacing="10" styleClass="attendance-buttons">
+                <Label text="Mark Attendance:" styleClass="section-header"/>
+                <HBox alignment="CENTER" spacing="10">
+                    <Button text="Present" fx:id="presentButton" onAction="#handlePresent" styleClass="present-button"/>
+                    <Button text="Absent" fx:id="absentButton" onAction="#handleAbsent" styleClass="absent-button"/>
+                    <Button text="Excused" fx:id="excusedButton" onAction="#handleExcused" styleClass="excused-button"/>
+                </HBox>
+                <Button text="Play Name" fx:id="playNameButton" onAction="#handlePlayName" styleClass="play-button"/>
+            </VBox>
+        </VBox>
+    </center>
+    
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" spacing="10" styleClass="footer">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label fx:id="statusLabel" HBox.hgrow="ALWAYS" styleClass="status-label"/>
+            <Label text="© Java Programming Course Project" styleClass="copyright-label"/>
+        </HBox>
+    </bottom>
+    
+</BorderPane>

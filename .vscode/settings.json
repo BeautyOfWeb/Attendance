@@ -1,0 +1,16 @@
+{
+  "java.project.referencedLibraries": [
+    "lib/**/*.jar",
+    "/Users/tianlema/java/javafx-sdk/lib/javafx-swt.jar",
+    "/Users/tianlema/java/javafx-sdk/lib/javafx.base.jar",
+    "/Users/tianlema/java/javafx-sdk/lib/javafx.controls.jar",
+    "/Users/tianlema/java/javafx-sdk/lib/javafx.fxml.jar",
+    "/Users/tianlema/java/javafx-sdk/lib/javafx.graphics.jar",
+    "/Users/tianlema/java/javafx-sdk/lib/javafx.media.jar",
+    "/Users/tianlema/java/javafx-sdk/lib/javafx.swing.jar",
+    "/Users/tianlema/java/javafx-sdk/lib/javafx.web.jar",
+    "/Users/tianlema/java/javafx-sdk/lib/jdk.jsobject.jar",
+    "/Users/tianlema/java/javafx-sdk/lib/jfx.incubator.input.jar",
+    "/Users/tianlema/java/javafx-sdk/lib/jfx.incubator.richtext.jar"
+  ]
+}
