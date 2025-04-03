@@ -15,6 +15,7 @@ import java.io.File;
 import java.net.URL;
 import java.util.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 /**
@@ -269,6 +270,6 @@ public class AttendanceController implements Initializable {
     private void handleSave() {
         dataService.saveStudents(new ArrayList<>(students));
         updateStatus("Attendance records saved successfully. " + 
-                    LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+                    LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
     }
 }

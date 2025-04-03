@@ -27,7 +27,7 @@ if %ERRORLEVEL% NEQ 0 (
 echo Copying resources...
 REM Copy resources
 if not exist %OUTPUT_DIR%\resources mkdir %OUTPUT_DIR%\resources
-xcopy /E /Y %SRC_DIR%\resources %OUTPUT_DIR%\resources\
+xcopy /E /Y resources %OUTPUT_DIR%\resources\
 
 echo Running application...
 REM Run the application

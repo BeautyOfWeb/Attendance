@@ -1,6 +1,6 @@
 # Classroom Attendance System
 
-A simple JavaFX application for tracking classroom attendance and enabling instructors to randomly select students for participation, with features designed to ensure fair selection over time.
+A JavaFX application for tracking classroom attendance and enabling instructors to randomly select students for participation, with features designed to ensure fair selection over time.
 
 ## Overview
 
@@ -19,15 +19,16 @@ This application helps instructors manage classroom attendance by:
 ## Project Structure
 
 ```
-src/
-├── edu/attendance/
-│   ├── model/           # Data models
-│   │   └── Student.java
-│   ├── controller/      # UI controllers
-│   │   └── AttendanceController.java
-│   ├── util/            # Utility classes
-│   │   └── StudentDataService.java
-│   └── AttendanceApplication.java  # Main application class
+.
+├── src/
+│   └── edu/attendance/
+│       ├── model/           # Data models
+│       │   └── Student.java
+│       ├── controller/      # UI controllers
+│       │   └── AttendanceController.java
+│       ├── util/            # Utility classes
+│       │   └── StudentDataService.java
+│       └── AttendanceApplication.java  # Main application class
 │
 ├── resources/
 │   ├── data/            # CSV data files
@@ -38,6 +39,10 @@ src/
 │   │   └── attendance.css
 │   ├── images/          # Student photos (named as [id].jpg)
 │   └── audio/           # Name pronunciation audio files (named as [id].mp3)
+│
+├── bin/                 # Compiled classes and resources
+├── compile_and_run.sh   # Unix/Linux build script
+└── compile_and_run.bat  # Windows build script
 ```
 
 ## Setup Instructions
@@ -45,10 +50,12 @@ src/
 1. Download and install Java JDK 11 or higher
 2. Download JavaFX SDK from https://gluonhq.com/products/javafx/
 3. Unzip the JavaFX SDK to a location on your computer
-4. Update the `JAVAFX_PATH` in the compile script:
-   - For Windows: Edit `compile_and_run.bat`
-   - For macOS/Linux: Edit `compile_and_run.sh`
-5. Run the appropriate script for your operating system to compile and run the application
+4. Update the JavaFX path in the appropriate build script:
+   - For Windows: Edit `compile_and_run.bat` and set `JAVAFX_PATH` to your JavaFX SDK path
+   - For macOS/Linux: Edit `compile_and_run.sh` and set `JAVAFX_PATH` to your JavaFX SDK path
+5. Run the appropriate script for your operating system:
+   - Windows: Double-click `compile_and_run.bat` or run from command prompt
+   - macOS/Linux: Open terminal and run `./compile_and_run.sh`
 
 ## Features
 
@@ -57,69 +64,64 @@ src/
 - **Student Visualization**: Display student photos and favorite quotes
 - **Name Pronunciation**: Play audio files for correct name pronunciation
 - **Data Persistence**: Save attendance records to CSV files
+- **Modern UI**: Clean and intuitive interface with responsive design
 
-## Design and Development Process
+## Technical Details
 
-### 1. Problem Analysis
+### Data Storage
+- Student data is stored in CSV format in `resources/data/students.csv`
+- Each student has a unique ID used for their photo and audio files
+- Photos are stored as JPG files in `resources/images/`
+- Audio files are stored as MP3 files in `resources/audio/`
 
-The problem is centered around classroom participation and attendance tracking:
-- Instructors need to call on students fairly
-- Students who miss class should be caught up
-- Some students might require excused absences
-- Keeping track of participation manually is difficult
+### Selection Algorithm
+The random selection algorithm uses a weighted probability system that:
+- Gives higher priority to students who have been called less frequently
+- Increases probability for students who have been absent
+- Reduces probability for students called recently
+- Ensures fair participation over time
 
-### 2. Conceptual Design
+### Error Handling
+- Robust file operations with atomic writes
+- Proper CSV field escaping
+- Comprehensive error logging
+- Graceful handling of missing resources
 
-We identified key entities and behaviors:
-- **Student**: The primary data entity with attributes like name, quote, attendance history
-- **Selection Algorithm**: Determines which students should be called more frequently
-- **UI Components**: How the instructor will interact with the system
-- **Data Storage**: How to persist attendance records between sessions
+## Development
 
-### 3. Architectural Design
+### Building from Source
+1. Clone the repository
+2. Set up Java and JavaFX as described in Setup Instructions
+3. Run the appropriate build script
+4. The compiled application will be in the `bin` directory
 
-The application follows the MVC (Model-View-Controller) pattern:
-- **Model**: `Student` class represents student data
-- **View**: FXML and CSS files define the UI
-- **Controller**: `AttendanceController` manages user interactions
+### Adding New Students
+1. Add student data to `resources/data/students.csv`
+2. Add student photo as `[id].jpg` to `resources/images/`
+3. Add name pronunciation as `[id].mp3` to `resources/audio/`
 
-### 4. Implementation
+## Troubleshooting
 
-The code implementation demonstrates several Java programming concepts:
-- Object-oriented design
-- File I/O for data persistence
-- JavaFX for GUI development
-- Event-driven programming
-- Collection manipulation
+### Common Issues
+1. **JavaFX not found**: Ensure JavaFX path is correctly set in build script
+2. **Missing resources**: Check that all required files are in the correct locations
+3. **File permissions**: Ensure write permissions for the resources directory
+4. **Audio not playing**: Verify audio files are valid MP3 format
 
-## How to Use
+### Logging
+The application logs errors and warnings to help diagnose issues:
+- Severe errors are logged with full stack traces
+- Warnings are logged for data parsing issues
+- File operation errors are logged with details
 
-1. **Start the Application**: Run the application using the provided scripts
-2. **View Students**: The left panel shows the list of all students
-3. **Random Selection**: Click "Random Selection" to select a student based on the weighted algorithm
-4. **Mark Attendance**: When a student is selected, mark them as:
-   - Present: Student is in class and has responded
-   - Absent: Student is not in class
-   - Excused: Student has a valid reason for absence
-5. **Play Name**: If audio is available, click "Play Name" to hear the pronunciation
-6. **Save Records**: Click "Save Records" to persist the attendance data
+## Contributing
 
-## Educational Value
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
 
-This project demonstrates several important programming concepts:
-- **Object-Oriented Programming**: Classes, inheritance, encapsulation
-- **File I/O**: Reading and writing CSV files
-- **Data Structures**: Using collections like Lists
-- **GUI Programming**: JavaFX, FXML, CSS
-- **Event Handling**: Responding to user actions
-- **Probability and Algorithms**: Weighted selection algorithm
+## License
 
-## Expansion Ideas
-
-Students can enhance this project by:
-1. Adding authentication for instructors
-2. Creating a student view that shows only the selected student
-3. Implementing statistical reports on attendance patterns
-4. Adding export functionality for attendance reports
-5. Creating a calendar view for tracking attendance over time
-6. Implementing a web-based version using JavaFX WebView or as a separate web application
+This project is licensed under the MIT License - see the LICENSE file for details.
