@@ -3,9 +3,9 @@ id,name,favorite_quote,times_called,times_present,times_absent,times_excused,las
 2,Emma Johnson,Believe you can and you're halfway there.,2,2,0,0,2025-04-03
 3,Michael Brown,Success is not final; failure is not fatal: It is the courage to continue that counts.,1,1,0,0,2025-04-03
 4,Sophia Williams,Your time is limited so don't waste it living someone else's life.,4,2,1,1,2025-04-03
-5,James Jones,The future belongs to those who believe in the beauty of their dreams.,1,0,0,1,2025-03-15
+5,James Jones,The future belongs to those who believe in the beauty of their dreams.,2,0,1,1,2025-04-03
 6,Olivia Davis,It does not matter how slowly you go as long as you do not stop.,2,2,0,0,2025-04-03
-7,Robert Miller,The only limit to our realization of tomorrow is our doubts of today.,5,2,2,1,2025-03-30
+7,Robert Miller,The only limit to our realization of tomorrow is our doubts of today.,6,2,2,2,2025-04-03
 8,Ava Wilson,Strive not to be a success but rather to be of value.,2,2,0,0,2025-04-03
 9,William Taylor,Don't watch the clock; do what it does. Keep going.,4,1,2,1,2025-04-03
 10,Isabella Anderson,The best way to predict the future is to create it.,5,3,2,0,2025-04-03
