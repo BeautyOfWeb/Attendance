@@ -1,0 +1,188 @@
+/* Global Styles */
+.root {
+    -fx-font-family: 'Arial', sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #f5f5f5;
+}
+
+/* Main Container */
+.main-container {
+    -fx-background-color: white;
+}
+
+/* Header Styles */
+.header {
+    -fx-background-color: #3498db;
+    -fx-padding: 10px;
+}
+
+.title-label {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+/* Student List Container */
+.student-list-container {
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: #ddd;
+    -fx-border-width: 0 1 0 0;
+    -fx-min-width: 250px;
+}
+
+.section-header {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+/* Action Buttons */
+.action-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-background-radius: 4px;
+}
+
+.action-button:hover {
+    -fx-background-color: #2980b9;
+}
+
+/* Student Detail Container */
+.student-detail-container {
+    -fx-background-color: white;
+    -fx-padding: 20px;
+}
+
+.student-name {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+.quote-container {
+    -fx-background-color: #f9f9f9;
+    -fx-background-radius: 5px;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 5px;
+}
+
+.quote-text {
+    -fx-font-style: italic;
+    -fx-padding: 10px;
+    -fx-text-alignment: center;
+}
+
+.stats-header {
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+.stats-text {
+    -fx-text-fill: #555;
+}
+
+/* Attendance Buttons */
+.attendance-buttons {
+    -fx-padding: 10px;
+    -fx-spacing: 10px;
+}
+
+.present-button {
+    -fx-background-color: #2ecc71;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-min-width: 100px;
+    -fx-cursor: hand;
+    -fx-background-radius: 4px;
+}
+
+.present-button:hover {
+    -fx-background-color: #27ae60;
+}
+
+.absent-button {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-min-width: 100px;
+    -fx-cursor: hand;
+    -fx-background-radius: 4px;
+}
+
+.absent-button:hover {
+    -fx-background-color: #c0392b;
+}
+
+.excused-button {
+    -fx-background-color: #f39c12;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-min-width: 100px;
+    -fx-cursor: hand;
+    -fx-background-radius: 4px;
+}
+
+.excused-button:hover {
+    -fx-background-color: #d35400;
+}
+
+.play-button {
+    -fx-background-color: #9b59b6;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-min-width: 100px;
+    -fx-cursor: hand;
+    -fx-background-radius: 4px;
+}
+
+.play-button:hover {
+    -fx-background-color: #8e44ad;
+}
+
+/* Footer */
+.footer {
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: #ddd;
+    -fx-border-width: 1 0 0 0;
+    -fx-padding: 10px;
+}
+
+.status-label {
+    -fx-text-fill: #555;
+    -fx-font-style: italic;
+}
+
+.copyright-label {
+    -fx-text-fill: #888;
+    -fx-font-size: 12px;
+}
+
+/* ListView styling */
+.list-view {
+    -fx-background-color: white;
+    -fx-background-radius: 4px;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 4px;
+}
+
+.list-cell {
+    -fx-padding: 8px;
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #eee transparent;
+}
+
+.list-cell:filled:selected {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+.list-cell:filled:hover {
+    -fx-background-color: #f2f2f2;
+}
+
+.list-cell:filled:selected:hover {
+    -fx-background-color: #2980b9;
+    -fx-text-fill: white;
+}
